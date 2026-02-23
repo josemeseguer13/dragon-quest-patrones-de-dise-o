@@ -172,17 +172,3 @@ Ahora cada ataque es independiente. No hay forma de agrupar varios.
 | Command  | Encapsular acciones para ejecutar, deshacer, encolar  |
 | Facade   | Interfaz simple sobre un subsistema complejo          |
 | Composite| Tratar grupos como elementos individuales             |
-
----
-
-## Orden sugerido para el taller
-
-1. **Strategy** (fórmulas de daño) — más directo
-2. **Factory** (creación de ataques)
-3. **Builder** (creación de personajes)
-4. **Singleton** (almacenamiento)
-5. **Adapter** (formato externo)
-6. **Observer** (notificaciones)
-7. **Command** (deshacer)
-8. **Facade** (API simplificada)
-9. **Composite** (combos)
