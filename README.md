@@ -31,9 +31,9 @@ src/main/java/com/taller/patrones/
 **Situación:** Quieres añadir el ataque "Meteoro" (120 de poder, tipo especial). Abres `CombatEngine` y ves que tanto `createAttack()` como `calculateDamage()` tienen un `switch` que crece con cada ataque o tipo nuevo.
 
 **Preguntas:**
-- ¿Qué problema te encuentras al añadir "Meteoro"?
-- ¿Qué pasa si mañana piden 10 ataques más?
-- ¿Qué patrón permitiría añadir ataques **sin modificar** `CombatEngine`?
+- ¿Qué problema te encuentras al añadir "Meteoro"? Meter todos lo parámetros y se engrandece el switch case.
+- ¿Qué pasa si mañana piden 10 ataques más? El switch case se hace muy grande.
+- ¿Qué patrón permitiría añadir ataques **sin modificar** `CombatEngine`? Command
 
 **Pista:** Busca en `infrastructure/combat/CombatEngine.java`
 
