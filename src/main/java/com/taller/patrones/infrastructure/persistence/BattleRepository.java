@@ -1,6 +1,7 @@
 package com.taller.patrones.infrastructure.persistence;
 
 import com.taller.patrones.domain.Battle;
+import lombok.Getter;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -12,6 +13,12 @@ import java.util.concurrent.ConcurrentHashMap;
  * también creara su propio BattleRepository, ¿compartirían las batallas?
  */
 public class BattleRepository {
+
+    @Getter
+    private static BattleRepository instance = new BattleRepository();
+
+    private BattleRepository() {
+    }
 
     private static final Map<String, Battle> battles = new ConcurrentHashMap<>();
 

@@ -1,8 +1,12 @@
 package com.taller.patrones.domain;
 
+import lombok.Builder;
+import lombok.Getter;
+
 /**
  * Representa un personaje en combate.
  */
+@Getter
 public class Character {
 
     private final String name;
@@ -12,6 +16,7 @@ public class Character {
     private final int defense;
     private final int speed;
 
+    @Builder
     public Character(String name, int maxHp, int attack, int defense, int speed) {
         this.name = name;
         this.maxHp = maxHp;
@@ -20,13 +25,6 @@ public class Character {
         this.defense = defense;
         this.speed = speed;
     }
-
-    public String getName() { return name; }
-    public int getCurrentHp() { return currentHp; }
-    public int getMaxHp() { return maxHp; }
-    public int getAttack() { return attack; }
-    public int getDefense() { return defense; }
-    public int getSpeed() { return speed; }
 
     public void takeDamage(int damage) {
         this.currentHp = Math.max(0, currentHp - damage);

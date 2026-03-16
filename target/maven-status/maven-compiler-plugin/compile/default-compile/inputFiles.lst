@@ -1,8 +1,29 @@
-/home/jose-ignacio/Desktop/Taller Patrones de Diseño/src/main/java/com/taller/patrones/interfaces/rest/BattleController.java
-/home/jose-ignacio/Desktop/Taller Patrones de Diseño/src/main/java/com/taller/patrones/domain/Battle.java
-/home/jose-ignacio/Desktop/Taller Patrones de Diseño/src/main/java/com/taller/patrones/infrastructure/persistence/BattleRepository.java
-/home/jose-ignacio/Desktop/Taller Patrones de Diseño/src/main/java/com/taller/patrones/application/BattleService.java
-/home/jose-ignacio/Desktop/Taller Patrones de Diseño/src/main/java/com/taller/patrones/domain/Character.java
-/home/jose-ignacio/Desktop/Taller Patrones de Diseño/src/main/java/com/taller/patrones/infrastructure/combat/CombatEngine.java
-/home/jose-ignacio/Desktop/Taller Patrones de Diseño/src/main/java/com/taller/patrones/CombatSimulatorApplication.java
-/home/jose-ignacio/Desktop/Taller Patrones de Diseño/src/main/java/com/taller/patrones/domain/Attack.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\infrastructure\persistence\BattleRepository.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\CombatSimulatorApplication.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\application\subscribers\StatsUpdator.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\domain\strategies\CriticoTypeStrategy.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\domain\factories\AttackTypeFactory.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\domain\attacksComponents\Attack.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\domain\factories\IceBeamAttackFactory.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\domain\factories\FireballAttackFactory.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\interfaces\rest\adapters\StartBattleRequestAdapter.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\domain\strategies\StatusTypeStrategy.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\domain\factories\ThunderAttackFactory.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\domain\factories\SlashAttackFactory.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\interfaces\rest\BattleController.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\domain\factories\PoisonStingAttackFactory.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\domain\factories\TackleAttackFactory.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\domain\attacksComponents\ComboAttack.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\application\commands\Command.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\application\subscribers\Subscriber.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\domain\factories\MeteorAttackFactory.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\domain\Character.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\application\commands\ApplyDamageCommand.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\domain\Battle.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\domain\strategies\NormalTypeStrategy.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\domain\strategies\AttackTypeStrategy.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\domain\strategies\SpecialTypeStrategy.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\infrastructure\combat\CombatEngine.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\domain\attacksComponents\AttackComponent.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\application\BattleService.java
+C:\Users\sergi\Desktop\MyProjects\dragon-quest-patrones-de-dise-o\src\main\java\com\taller\patrones\application\subscribers\Logger.java

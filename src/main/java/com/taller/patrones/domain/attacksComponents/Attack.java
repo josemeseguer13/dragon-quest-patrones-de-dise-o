@@ -1,9 +1,9 @@
-package com.taller.patrones.domain;
+package com.taller.patrones.domain.attacksComponents;
 
 /**
  * Representa un ataque que puede ejecutar un personaje.
  */
-public class Attack {
+public class Attack implements AttackComponent {
 
     private final String name;
     private final int basePower;

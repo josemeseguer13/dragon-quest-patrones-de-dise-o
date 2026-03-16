@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="eccbb541-e955-47b1-b795-2cb3eb34d446" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/application/commands/ApplyDamageCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/application/commands/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/application/subscribers/Logger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/application/subscribers/StatsUpdator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/application/subscribers/Subscriber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/domain/attacksComponents/AttackComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/domain/attacksComponents/ComboAttack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/domain/factories/AttackTypeFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/domain/factories/FireballAttackFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/domain/factories/IceBeamAttackFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/domain/factories/MeteorAttackFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/domain/factories/PoisonStingAttackFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/domain/factories/SlashAttackFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/domain/factories/TackleAttackFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/domain/factories/ThunderAttackFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/domain/strategies/AttackTypeStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/domain/strategies/CriticoTypeStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/domain/strategies/NormalTypeStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/domain/strategies/SpecialTypeStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/domain/strategies/StatusTypeStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/interfaces/rest/adapters/StartBattleRequestAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/taller/patrones/application/BattleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/application/BattleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/taller/patrones/domain/Attack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/domain/attacksComponents/Attack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/taller/patrones/domain/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/domain/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/taller/patrones/domain/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/domain/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/taller/patrones/infrastructure/combat/CombatEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/infrastructure/combat/CombatEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/taller/patrones/infrastructure/persistence/BattleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/infrastructure/persistence/BattleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/taller/patrones/interfaces/rest/BattleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/taller/patrones/interfaces/rest/BattleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/taller/patrones/application/BattleService$BattleStartResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/taller/patrones/application/BattleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/taller/patrones/domain/Attack$AttackType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/taller/patrones/domain/Attack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/taller/patrones/domain/Battle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/taller/patrones/domain/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/taller/patrones/domain/Character.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/taller/patrones/infrastructure/combat/CombatEngine$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/taller/patrones/infrastructure/combat/CombatEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/taller/patrones/infrastructure/combat/CombatEngine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/taller/patrones/infrastructure/persistence/BattleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/taller/patrones/infrastructure/persistence/BattleRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/taller/patrones/interfaces/rest/BattleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/taller/patrones/interfaces/rest/BattleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="3AUESxSyWeqg5GcekZaUjcyWxWL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.combat-simulator [org.springframework.boot:spring-boot-maven-plugin:3.2.0:run].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sergi/Desktop/MyProjects/dragon-quest-patrones-de-dise-o&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.taller.patrones.domain.strategies" />
+      <recent name="com.taller.patrones.domain.factories" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="eccbb541-e955-47b1-b795-2cb3eb34d446" name="Changes" comment="" />
+      <created>1772638756190</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1772638756190</updated>
+    </task>
+    <servers />
+  </component>
+</project>

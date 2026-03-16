@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Representa una batalla entre dos personajes.
  */
-public class Battle {
+public class Battle{
 
     private final Character player;
     private final Character enemy;

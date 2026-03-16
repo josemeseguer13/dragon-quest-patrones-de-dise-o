@@ -26,7 +26,7 @@ src/main/java/com/taller/patrones/
 
 ## Ejercicios (enfoque escenario → patrón)
 
-### 1. Añadir un nuevo tipo de ataque
+### 1. Añadir un nuevo tipo de ataque (Factory)
 
 **Situación:** Quieres añadir el ataque "Meteoro" (120 de poder, tipo especial). Abres `CombatEngine` y ves que tanto `createAttack()` como `calculateDamage()` tienen un `switch` que crece con cada ataque o tipo nuevo.
 
@@ -39,7 +39,7 @@ src/main/java/com/taller/patrones/
 
 ---
 
-### 2. Añadir una nueva fórmula de daño
+### 2. Añadir una nueva fórmula de daño (Strategy)
 
 **Situación:** Los ataques de tipo STATUS (veneno, parálisis) no deberían hacer daño directo. Pero en `calculateDamage()` el case STATUS devuelve `attacker.getAttack()` — algo no cuadra.
 
@@ -53,7 +53,7 @@ Además, te piden un nuevo tipo: "CRÍTICO", con fórmula `daño * 1.5` y 20% de
 
 ---
 
-### 3. Crear personajes con muchas estadísticas
+### 3. Crear personajes con muchas estadísticas (Builder)
 
 **Situación:** En `BattleService.startBattle()` creas personajes así:
 
@@ -72,7 +72,7 @@ Ahora necesitas soportar: equipamiento, buffos temporales, clase (guerrero/mago)
 
 ---
 
-### 4. Un único almacén de batallas
+### 4. Un único almacén de batallas (Singleton)
 
 **Situación:** `BattleRepository` usa un `Map` estático para que funcione. Pero `BattleService` hace `new BattleRepository()` cada vez. Si otro equipo crea un `TournamentService` que también hace `new BattleRepository()`, ¿compartirían las batallas?
 
@@ -85,7 +85,7 @@ Ahora necesitas soportar: equipamiento, buffos temporales, clase (guerrero/mago)
 
 ---
 
-### 5. Recibir datos de un API externo
+### 5. Recibir datos de un API externo (Adapter)
 
 **Situación:** El endpoint `POST /api/battle/start/external` recibe JSON con campos `fighter1_hp`, `fighter1_atk`, `fighter2_name`, etc. El controller hace el mapeo manual a `Character` y `Battle`.
 
@@ -100,7 +100,7 @@ Mañana llega otro proveedor con formato distinto: `player.health`, `player.atta
 
 ---
 
-### 6. Notificar cuando ocurre daño
+### 6. Notificar cuando ocurre daño (Observer)
 
 **Situación:** Necesitas:
 - Enviar un evento a un sistema de analytics cada vez que hay daño
@@ -118,7 +118,7 @@ Ahora mismo solo existe `battle.log()`. Tendrías que añadir código en `Battle
 
 ---
 
-### 7. Deshacer el último ataque
+### 7. Deshacer el último ataque (Command)
 
 **Situación:** Quieren la funcionalidad "Deshacer" — revertir el último ataque ejecutado.
 
@@ -133,7 +133,7 @@ Ahora el ataque se ejecuta directamente en `applyDamage()`. No hay registro de "
 
 ---
 
-### 8. Simplificar la API del combate
+### 8. Simplificar la API del combate (Facade)
 
 **Situación:** Para ejecutar un ataque, el controller llama a `battleService.executePlayerAttack()` o `executeEnemyAttack()`, que a su vez usa `CombatEngine`, aplica daño, cambia turno, etc. Un cliente externo que quiera integrarse tendría que conocer `BattleService`, `CombatEngine`, `BattleRepository`...
 
@@ -145,7 +145,7 @@ Ahora el ataque se ejecuta directamente en `applyDamage()`. No hay registro de "
 
 ---
 
-### 9. Ataques compuestos (combo)
+### 9. Ataques compuestos (combo) (Composite)
 
 **Situación:** Quieres un ataque "Combo Triple" que ejecuta Tackle + Slash + Fireball en secuencia.
 

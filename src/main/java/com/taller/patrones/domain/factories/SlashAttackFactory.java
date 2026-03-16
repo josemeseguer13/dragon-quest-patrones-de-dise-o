@@ -1,0 +1,9 @@
+package com.taller.patrones.domain.factories;
+
+import com.taller.patrones.domain.attacksComponents.Attack;
+
+public class SlashAttackFactory implements AttackTypeFactory {
+    public Attack createAttack(){
+        return new Attack("Slash", 55, Attack.AttackType.NORMAL);
+    }
+}

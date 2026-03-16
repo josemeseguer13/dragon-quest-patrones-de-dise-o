@@ -1,12 +1,14 @@
 package com.taller.patrones.interfaces.rest;
 
 import com.taller.patrones.application.BattleService;
+import com.taller.patrones.application.subscribers.Logger;
+import com.taller.patrones.application.subscribers.StatsUpdator;
+import com.taller.patrones.interfaces.rest.adapters.StartBattleRequestAdapter;
 import com.taller.patrones.domain.Battle;
 import com.taller.patrones.domain.Character;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -22,6 +24,12 @@ public class BattleController {
         String enemyName = body != null && body.containsKey("enemyName") ? body.get("enemyName") : null;
 
         var result = battleService.startBattle(playerName, enemyName);
+
+        StatsUpdator statsUpdator = new StatsUpdator();
+        Logger logger = new Logger();
+        battleService.subscribe(statsUpdator);
+        battleService.subscribe(logger);
+
         Battle battle = result.battle();
 
         return ResponseEntity.ok(Map.of(
@@ -45,17 +53,9 @@ public class BattleController {
      */
     @PostMapping("/start/external")
     public ResponseEntity<Map<String, Object>> startBattleFromExternal(@RequestBody Map<String, Object> body) {
-        String fighter1Name = (String) body.getOrDefault("fighter1_name", "Héroe");
-        int fighter1Hp = ((Number) body.getOrDefault("fighter1_hp", 150)).intValue();
-        int fighter1Atk = ((Number) body.getOrDefault("fighter1_atk", 25)).intValue();
-        String fighter2Name = (String) body.getOrDefault("fighter2_name", "Dragón");
-        int fighter2Hp = ((Number) body.getOrDefault("fighter2_hp", 120)).intValue();
-        int fighter2Atk = ((Number) body.getOrDefault("fighter2_atk", 30)).intValue();
-
-        var result = battleService.startBattleFromExternal(
-                fighter1Name, fighter1Hp, fighter1Atk,
-                fighter2Name, fighter2Hp, fighter2Atk
-        );
+        Character player = StartBattleRequestAdapter.getPlayer(body);
+        Character enemy = StartBattleRequestAdapter.getEnemy(body);
+        var result = battleService.startBattleFromExternal(player, enemy);
         Battle battle = result.battle();
 
         return ResponseEntity.ok(Map.of(
@@ -84,12 +84,10 @@ public class BattleController {
         Battle battle = battleService.getBattle(battleId);
         if (battle == null) return ResponseEntity.notFound().build();
 
-        String attackName = body != null && body.get("attack") != null ? body.get("attack") : "TACKLE";
-
         if (battle.isPlayerTurn()) {
-            battleService.executePlayerAttack(battleId, attackName);
+            battleService.executePlayerAttackFacade(battleId, body.get("attack"));
         } else {
-            battleService.executeEnemyAttack(battleId, attackName);
+            battleService.executeEnemyAttackFacade(battleId, body.get("attack"));
         }
 
         return ResponseEntity.ok(toBattleDto(battleService.getBattle(battleId)));
@@ -103,7 +101,7 @@ public class BattleController {
             return ResponseEntity.ok(toBattleDto(battle));
         }
         String attack = BattleService.ENEMY_ATTACKS.get((int) (Math.random() * BattleService.ENEMY_ATTACKS.size()));
-        battleService.executeEnemyAttack(battleId, attack);
+        battleService.executeEnemyAttackFacade(battleId, attack);
         return ResponseEntity.ok(toBattleDto(battleService.getBattle(battleId)));
     }
 
