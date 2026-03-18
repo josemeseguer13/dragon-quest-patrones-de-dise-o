@@ -2,7 +2,7 @@ package com.taller.patrones.interfaces.rest;
 
 import com.taller.patrones.application.BattleService;
 import com.taller.patrones.application.subscribers.Logger;
-import com.taller.patrones.application.subscribers.StatsUpdator;
+import com.taller.patrones.application.subscribers.StatsUpdater;
 import com.taller.patrones.interfaces.rest.adapters.StartBattleRequestAdapter;
 import com.taller.patrones.domain.Battle;
 import com.taller.patrones.domain.Character;
@@ -25,7 +25,7 @@ public class BattleController {
 
         var result = battleService.startBattle(playerName, enemyName);
 
-        StatsUpdator statsUpdator = new StatsUpdator();
+        StatsUpdater statsUpdator = new StatsUpdater();
         Logger logger = new Logger();
         battleService.subscribe(statsUpdator);
         battleService.subscribe(logger);
@@ -104,6 +104,8 @@ public class BattleController {
         battleService.executeEnemyAttackFacade(battleId, attack);
         return ResponseEntity.ok(toBattleDto(battleService.getBattle(battleId)));
     }
+
+    //Te faltaría añadir el GET Endpoint para el undo: https://github.com/AnaGciaSchz/dragon-quest-patrones/blob/f9a87c7856a0218e5c6e76532527fb3cb3222a29/src/main/java/com/taller/patrones/interfaces/rest/BattleController.java#L77
 
     private Map<String, Object> toBattleDto(Battle battle) {
         return Map.of(

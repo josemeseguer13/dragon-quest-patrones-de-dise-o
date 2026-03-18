@@ -20,6 +20,6 @@ public class Attack implements AttackComponent {
     public AttackType getType() { return type; }
 
     public enum AttackType {
-        NORMAL, SPECIAL, STATUS
+        NORMAL, SPECIAL, STATUS, CRITICO //Te faltó el nuevo tipo de ataque
     }
 }

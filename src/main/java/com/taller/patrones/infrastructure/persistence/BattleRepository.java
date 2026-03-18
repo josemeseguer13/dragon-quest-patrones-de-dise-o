@@ -14,13 +14,15 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class BattleRepository {
 
-    @Getter
+    private static final Map<String, Battle> battles = new ConcurrentHashMap<>(); //Los parámetros de la clase al inicio del todo, por favor
+
+    @Getter //A ver... si, se podría hacer, pero en un singleton se suele esperar un getInstance... Tendría que pensar fuerte si esto es equivalente.
+    //Anyway, Lombok mola, yo lo uso mucho, pero recuerda que lo carga el diablo y que a veces hay inconsistencias con anotaciones de spring
+    //(para que lo tengas en cuenta en el futuro).
     private static BattleRepository instance = new BattleRepository();
 
     private BattleRepository() {
-    }
-
-    private static final Map<String, Battle> battles = new ConcurrentHashMap<>();
+    } //constructor privado, bien
 
     public void save(String id, Battle battle) {
         battles.put(id, battle);

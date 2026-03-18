@@ -27,7 +27,7 @@ public class BattleService {
     public static final List<String> PLAYER_ATTACKS = List.of("TACKLE", "SLASH", "FIREBALL", "ICE_BEAM", "POISON_STING", "THUNDER");
     public static final List<String> ENEMY_ATTACKS = List.of("TACKLE", "SLASH", "FIREBALL");
 
-    private Map<String, AttackTypeFactory> attackFactoryMap = Map.of(
+    private Map<String, AttackFactory> attackFactoryMap = Map.of(
             "FIREBALL", new FireballAttackFactory(),
             "ICE BEAM", new IceBeamAttackFactory(),
             "POISON STING", new PoisonStingAttackFactory(),
@@ -56,33 +56,34 @@ public class BattleService {
         executePlayerAttack(battleId, attackFactoryMap.getOrDefault(attackName, new TackleAttackFactory()));
     }
 
-    public void executePlayerAttack(String battleId, AttackTypeFactory attackTypeFactory) {
+    public void executePlayerAttack(String battleId, AttackFactory attackFactory) {
         Battle battle = battleRepository.findById(battleId);
         if (battle == null || battle.isFinished() || !battle.isPlayerTurn()) return;
 
-        Attack attack = combatEngine.createAttack(attackTypeFactory);
+        Attack attack = combatEngine.createAttack(attackFactory);
         int damage = combatEngine.calculateDamage(battle.getPlayer(), battle.getEnemy(), attack);
         applyDamage(battle, battle.getPlayer(), battle.getEnemy(), damage, attack);
     }
 
-    public void executeEnemyAttackFacade(String battleId, String attackName) {
+    public void executeEnemyAttackFacade(String battleId, String attackName) { //? Una Facade sería una clase nueva: https://github.com/AnaGciaSchz/dragon-quest-patrones/blob/solucion-ana/src/main/java/com/taller/patrones/interfaces/CombatFacade.java
         executeEnemyAttack(battleId, attackFactoryMap.getOrDefault(attackName, new TackleAttackFactory()));
     }
 
-    public void executeEnemyAttack(String battleId, AttackTypeFactory attackTypeFactory) {
+    public void executeEnemyAttack(String battleId, AttackFactory attackFactory) {
         Battle battle = battleRepository.findById(battleId);
         if (battle == null || battle.isFinished() || battle.isPlayerTurn()) return;
 
-        Attack attack = combatEngine.createAttack(attackTypeFactory);
+        Attack attack = combatEngine.createAttack(attackFactory);
         int damage = combatEngine.calculateDamage(battle.getEnemy(), battle.getPlayer(), attack);
         applyDamage(battle, battle.getEnemy(), battle.getPlayer(), damage, attack);
     }
     public void subscribe(Subscriber suscriber) {
         observers.add(suscriber);
-    }
+    } //Me duele ver estos dos métodos aquí, esto iría en un notifier, una clase aparte: https://github.com/AnaGciaSchz/dragon-quest-patrones/blob/solucion-ana/src/main/java/com/taller/patrones/infrastructure/analytics/BattleEventNotifier.java
     public void unsubscribe(Subscriber suscriber) {
         observers.remove(suscriber);
     }
+
     private void applyDamage(Battle battle, Character attacker, Character defender, int damage, Attack attack) {
         ApplyDamageCommand attackCommand = ApplyDamageCommand.builder().battle(battle).attacker(attacker).defender(defender).damage(damage).attack(attack).observers(observers).build();
         attackCommand.execute();

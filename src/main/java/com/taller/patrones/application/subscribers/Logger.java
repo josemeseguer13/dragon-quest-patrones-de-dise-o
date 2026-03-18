@@ -4,7 +4,7 @@ import com.taller.patrones.domain.attacksComponents.Attack;
 import com.taller.patrones.domain.Battle;
 import com.taller.patrones.domain.Character;
 
-public class Logger implements Subscriber {
+public class Logger implements Subscriber { //Para acabar de hacer el observer te galta el publisher: https://refactoring.guru/es/design-patterns/observer
     public void applyDamageUpdate(Battle battle, Character attacker, Character defender, int damage, Attack attack){
         battle.log(attacker.getName() + " usa " + attack.getName() + " y hace " + damage + " de daño a " + defender.getName());
     }

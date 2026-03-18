@@ -7,6 +7,8 @@ import lombok.Getter;
  * Representa un personaje en combate.
  */
 @Getter
+@Builder //Sería más bien esta anotación para crearte el builder, aunque en esta ocasión esperaba que lo hiciérais a mano
+//Mira cómo lo hice yo: https://github.com/AnaGciaSchz/dragon-quest-patrones/blob/f9a87c7856a0218e5c6e76532527fb3cb3222a29/src/main/java/com/taller/patrones/domain/model/Character.java#L74
 public class Character {
 
     private final String name;
